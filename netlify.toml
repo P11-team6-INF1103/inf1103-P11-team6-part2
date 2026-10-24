@@ -1,0 +1,12 @@
+# Netlify builds the React dashboard in frontend/ on every push to main.
+# Set VITE_API_URL in Netlify's environment variables to the Render API address.
+[build]
+  base = "frontend"
+  command = "npm run build"
+  publish = "dist"
+
+# Single-page app: serve index.html for client-side routes.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
